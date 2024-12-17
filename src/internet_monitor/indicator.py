@@ -8,23 +8,9 @@ from gi.repository import Gtk, AppIndicator3
 from PyQt5.QtWidgets import QApplication
 import os
 
-last_play_id = None
 
 def quit(source):
     Gtk.main_quit()
-
-def play(source):
-    global last_play_id
-    # Verifica se QApplication já existe
-    app = QApplication.instance()
-    if app is None:
-        app = QApplication([])  # Inicializa QApplication se não existir
-    
-    clipboard = app.clipboard()  # Acessa o clipboard
-    text = clipboard.text()  # Obtém o texto do clipboard
-    
-    # Suponho que tts_play seja outra função que você implementou
-    print(text)
 
 def open_spinbutton_dialog(source):
     """Função que cria e exibe uma janela modal com um Gtk.SpinButton."""
@@ -67,11 +53,6 @@ def main():
 
     # Criação do menu
     menu = Gtk.Menu()
-
-    # Adicionando Play
-    item_play = Gtk.MenuItem(label="Play clipboard")
-    item_play.connect("activate", play)
-    menu.append(item_play)
 
     # Adicionando SpinButton (abre janela modal)
     item_spin = Gtk.MenuItem(label="Open SpinButton")
