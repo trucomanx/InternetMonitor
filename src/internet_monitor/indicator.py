@@ -13,7 +13,7 @@ from gi.repository import Gtk, AppIndicator3
 from PyQt5.QtWidgets import QApplication
 
 # Variável global para armazenar o tempo limite em minutos
-check_interval = 30
+check_interval = 90
 stop_checking = False  # Controle para encerrar a thread de verificação
 
 
