@@ -1,6 +1,6 @@
 # internet-monitor
 
-Program that reboot when pass X minuts.
+Program that reboot when pass X minuts without internet.
 
 ## Install from source
 Installing internet_monitor client program
